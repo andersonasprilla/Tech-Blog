@@ -40,4 +40,4 @@ Blog.init(
   }
 );
 
-module.exports = Project;
+module.exports = Blog;
