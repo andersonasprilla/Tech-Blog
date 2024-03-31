@@ -1,42 +1,42 @@
 [
   {
     "title": "Concert Radar",
-    "content": "A mobile app that utilizes the MVC architecture to notify users about concerts in their area, integrating location services with a user-friendly interface for event discovery and reminders."
+    "blog_description": "A mobile app that utilizes the MVC architecture to notify users about concerts in their area, integrating location services with a user-friendly interface for event discovery and reminders."
   },
   {
     "title": "Tech Trivia Master",
-    "content": "A web app offering daily technical quizzes on topics like programming and cybersecurity, designed to track and encourage user progress in various tech domains."
+    "blog_description": "A web app offering daily technical quizzes on topics like programming and cybersecurity, designed to track and encourage user progress in various tech domains."
   },
   {
     "title": "Roll 'Em Up",
-    "content": "A challenging maze game for Windows and macOS, where players navigate a ball through complex levels, showcasing smooth gameplay mechanics and increasing difficulty."
+    "blog_description": "A challenging maze game for Windows and macOS, where players navigate a ball through complex levels, showcasing smooth gameplay mechanics and increasing difficulty."
   },
   {
     "title": "Garden Guru",
-    "content": "An interactive mobile application that assists users in identifying plants and providing care tips, using image recognition and a vast plant database."
+    "blog_description": "An interactive mobile application that assists users in identifying plants and providing care tips, using image recognition and a vast plant database."
   },
   {
     "title": "Meal Matchmaker",
-    "content": "A culinary app that generates recipe suggestions based on ingredients users already have at home, aimed at reducing food waste and inspiring kitchen creativity."
+    "blog_description": "A culinary app that generates recipe suggestions based on ingredients users already have at home, aimed at reducing food waste and inspiring kitchen creativity."
   },
   {
     "title": "Fitness Frontier",
-    "content": "A virtual reality fitness app that combines immersive environments with customized workout plans, encouraging users to stay active in an engaging way."
+    "blog_description": "A virtual reality fitness app that combines immersive environments with customized workout plans, encouraging users to stay active in an engaging way."
   },
   {
     "title": "Space Tracker",
-    "content": "An educational app providing real-time tracking and information on satellites and celestial events, making astronomy accessible to enthusiasts of all ages."
+    "blog_description": "An educational app providing real-time tracking and information on satellites and celestial events, making astronomy accessible to enthusiasts of all ages."
   },
   {
     "title": "Mindful Moments",
-    "content": "A wellness app featuring guided meditations, mindfulness exercises, and tracking for personal mental health goals, promoting daily self-care practices."
+    "blog_description": "A wellness app featuring guided meditations, mindfulness exercises, and tracking for personal mental health goals, promoting daily self-care practices."
   },
   {
     "title": "Budget Buddy",
-    "content": "A financial planning app that helps users manage their expenses and savings goals through intuitive budgeting tools and personalized insights."
+    "blog_description": "A financial planning app that helps users manage their expenses and savings goals through intuitive budgeting tools and personalized insights."
   },
   {
     "title": "Eco Explorer",
-    "content": "A gamified app designed to educate users on environmental conservation through interactive challenges, quizzes, and eco-friendly lifestyle tips."
+    "blog_description": "A gamified app designed to educate users on environmental conservation through interactive challenges, quizzes, and eco-friendly lifestyle tips."
   }
 ]

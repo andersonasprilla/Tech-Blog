@@ -25,11 +25,10 @@
       <div class="card-header">
         Comment
       </div>
-      <form class="commentForm">
+      <form class="commentForm" data-blog-id="{{blogId}}">
         <div class="card-body">
           <label for="userComment" class="form-label">Your Comment</label> <!-- Accessibility improvement -->
-          <input type="text" id="userComment" class="full-width-input" placeholder="Write your comment here...">
-          <!-- Placeholder added for guidance -->
+          <textarea type="text" id="userComment" class="full-width-input" placeholder="Write your comment here..."></textarea>
         </div>
         <div class="card-footer text-end"> <!-- Alignment of the button to the right -->
           <button type="submit" class="submit-button">Submit</button>

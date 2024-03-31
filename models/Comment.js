@@ -11,7 +11,7 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    content: {
+    comment_description: {
       type: DataTypes.STRING,
     },
     date_created: {

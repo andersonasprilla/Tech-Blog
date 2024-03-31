@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Blog } = require('../../models');
 
 // @desc    Fetch  users
 // @route   GET /api/users
@@ -7,22 +7,22 @@ const { User } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const userData = await User.findAll({
-      attributes: { exclude: ['password']}
+      include: [{
+        model: Blog,
+      }],
+      attributes: { exclude: ['password'] },
     });
-    if (userData) {
-      // Send back the user data with a 200 OK status code
+    if (userData.length > 0) {
       res.status(200).json(userData);
     } else {
-      // If no users found, you can choose to send a 404 Not Found status
       res.status(404).json({ message: 'No users found' });
     }
   } catch (err) {
-    // Log the error to the server console for debugging
     console.error('Error fetching users:', err);
-    // Send back a 400 Bad Request status code with the error
     res.status(400).json(err);
   }
 });
+
 
 // @desc    Register new user
 // @route   POST /api/users/signup

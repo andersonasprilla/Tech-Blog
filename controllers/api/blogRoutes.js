@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog } = require('../../models');
+const { Blog, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // @desc    Fetch all Blogs
@@ -7,7 +7,9 @@ const withAuth = require('../../utils/auth');
 // @access  Public
 router.get('/', async (req, res) => {
   try {
-    const blogsData = await Blog.findAll()
+    const blogsData = await Blog.findAll({
+      include: [{ model: User }]
+    })
     res.status(200).json(blogsData)
   } catch (err) {
     res.status(400).json(err);
@@ -19,8 +21,8 @@ router.get('/', async (req, res) => {
 // @access  Public
 router.post('/', withAuth, async (req, res) => {
   // Example validation logic
-  if (!req.body.title || !req.body.content) {
-    return res.status(400).json({ message: 'Title and content are required.' });
+  if (!req.body.title || !req.body.blog_description) {
+    return res.status(400).json({ message: 'Title and description are required.' });
   }
   try {
     // Create the new blog

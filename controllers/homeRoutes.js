@@ -2,6 +2,9 @@ const router = require('express').Router();
 const { Blog, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+// @desc    Fetch all Blogs
+// @route   GET http://localhost:3001/
+// @access  Public
 router.get('/', async (req, res) => {
   try {
 
@@ -16,9 +19,9 @@ router.get('/', async (req, res) => {
 
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
-    res.render('homepage', { 
-      blogs, 
-      logged_in: req.session.logged_in 
+    res.render('homepage', {
+      blogs,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -26,18 +29,16 @@ router.get('/', async (req, res) => {
 });
 
 
-
-router.get('/blog/:id', async (req, res) => {
+// @desc    Fetch Blog by id
+// @route   GET http://localhost:3001/blog/:id
+// @access  Public
+router.get('/blog/:id', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
       include: [
         {
           model: User,
           attributes: ['name'],
-        },
-        {
-          model: Comment,
-          attributes: ['content', 'dateCreated'],
         },
       ],
     });
@@ -56,27 +57,27 @@ router.get('/blog/:id', async (req, res) => {
 //http://localhost:3001/dashboard
 // Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
-    try {
-      // Find the logged in user based on the session ID
-      const userData = await User.findByPk(req.session.user_id, {
-        attributes: { exclude: ['password'] },
-        include: [{ model: Blog }],
-      });
-  
-      const user = userData.get({ plain: true });
-  
-      res.render('dashboard', {
-        ...user,
-        logged_in: true
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Blog }],
+    });
 
-  
-  
-  
+    const user = userData.get({ plain: true });
+
+    res.render('dashboard', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+
+
 //http://localhost:3001/login
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
@@ -100,8 +101,8 @@ router.get('/signup', (req, res) => {
 });
 
 //http://localhost:3001/page1
-router.get("/page1",async(req,res)=>{
-    res.render("page1")
-  })
+router.get("/page1", async (req, res) => {
+  res.render("page1")
+})
 
 module.exports = router;

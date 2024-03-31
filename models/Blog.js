@@ -15,7 +15,7 @@ Blog.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    content: {
+    blog_description: {
       type: DataTypes.STRING,
     },
     date_created: {
@@ -27,7 +27,7 @@ Blog.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'id',
+        key: 'id'
       },
     },
   },
