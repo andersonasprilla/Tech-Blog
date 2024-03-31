@@ -160,6 +160,61 @@ h2 {
   .signup-link a:hover {
     color: #0056b3; /* A darker shade for hover effect */
   }
+
+  .full-width-input {
+    width: 100%; /* Make input take full width of its parent */
+    height: 5vh;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    padding: 10px; /* Adjust based on your design */
+    border: 1px solid #ccc; /* Optional: sets a border for the input */
+    margin: 0; /* Adjust or remove margin as needed */
+  }
+  
+  .card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds a subtle shadow to lift the card off the page */
+    border-radius: 8px; /* Rounds the corners for a softer look */
+    overflow: hidden; /* Ensures nothing spills out of the card's rounded corners */
+  }
+  
+  .card-header {
+    background-color: #007bff; /* Example primary color */
+    color: #ffffff; /* Ensures text on the header is white for contrast */
+    padding: 16px;
+    font-size: 20px; /* Bigger font size for the header */
+  }
+  
+  .card-body {
+    padding: 16px;
+  }
+  
+  .full-width-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 16px; /* Adds space below the input */
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Softly rounded corners on the input */
+  }
+  
+  .submit-button {
+    background-color: #28a745; /* A green color for the submit button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px; /* Consistency in rounding */
+    cursor: pointer; /* Changes the cursor to indicate it's clickable */
+    font-size: 16px; /* Slightly larger text inside the button */
+  }
+  
+  .submit-button:hover {
+    background-color: #218838; /* Darker shade on hover for feedback */
+  }
+  
+  .card-footer {
+    padding: 16px;
+    background-color: #f8f9fa; /* Light background for the footer to differentiate */
+  }
+  
   
   
   

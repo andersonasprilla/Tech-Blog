@@ -4,16 +4,37 @@
       <!-- Card Header with Blog Title -->
       <div class="card-header">
         <h2 class="mb-0">{{title}}</h2>
-        <div >
-        Created by {{user.title}} on {{format_date date_created}}
-      </div>
+        <div>
+          Created by {{user.title}} on {{format_date date_created}}
+        </div>
       </div>
       <!-- Card Body with Blog Content -->
       <div class="card-body">
         <p class="card-text">{{content}}</p>
       </div>
       <!-- Card Footer with Author and Date -->
-      
+
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        Comment
+      </div>
+      <form class="commentForm">
+        <div class="card-body">
+          <label for="userComment" class="form-label">Your Comment</label> <!-- Accessibility improvement -->
+          <input type="text" id="userComment" class="full-width-input" placeholder="Write your comment here...">
+          <!-- Placeholder added for guidance -->
+        </div>
+        <div class="card-footer text-end"> <!-- Alignment of the button to the right -->
+          <button type="submit" class="submit-button">Submit</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
