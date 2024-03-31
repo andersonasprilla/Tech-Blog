@@ -1,17 +1,27 @@
 [
-    {
-      "name": "John",
-      "email": "john@hotmail.com",
-      "password": "password12345"
-    },
-    {
-      "name": "Jane",
-      "email": "jane@gmail.com",
-      "password": "password12345"
-    },
-    {
-      "name": "Luis",
-      "email": "luis@aol.com",
-      "password": "password12345"
-    }
-  ]
+  {
+    "name": "John",
+    "email": "john@email.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Emily",
+    "email": "emily@email.com",
+    "password": "securePass987"
+  },
+  {
+    "name": "Alex",
+    "email": "alex@email.com",
+    "password": "alexStrongPwd321"
+  },
+  {
+    "name": "Samantha",
+    "email": "samantha@email.com",
+    "password": "sammySecret123"
+  },
+  {
+    "name": "Michael",
+    "email": "michael@email.com",
+    "password": "mikeEcho456"
+  }
+]
