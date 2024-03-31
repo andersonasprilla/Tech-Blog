@@ -10,14 +10,16 @@
       </div>
       <!-- Card Body with Blog Content -->
       <div class="card-body">
-        <p class="card-text">{{content}}</p>
+        <p class="card-text">{{blog_description}}</p>
       </div>
       <!-- Card Footer with Author and Date -->
-
     </div>
   </div>
 </div>
 
+<div id="commentsContainer">
+  <!-- Existing comments will be here -->
+</div>
 
 <div class="row">
   <div class="col-12">
@@ -25,7 +27,7 @@
       <div class="card-header">
         Comment
       </div>
-      <form class="commentForm" data-blog-id="{{blogId}}">
+      <form class="commentForm">
         <div class="card-body">
           <label for="userComment" class="form-label">Your Comment</label> <!-- Accessibility improvement -->
           <textarea type="text" id="userComment" class="full-width-input" placeholder="Write your comment here..."></textarea>
