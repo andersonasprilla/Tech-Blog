@@ -1,6 +1,24 @@
 const router = require('express').Router();
-const { Comment } = require('../../models');
+const { Comment, Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
+
+// @desc    Fetch all comments
+// @route   GET /api/comments
+// @access  Public
+router.get('/', async (req, res) => {
+  try {
+    const commentsData = await Comment.findAll({
+      include: [{ 
+        model: Blog,
+        attributes: ['title']
+      }]
+    });
+    res.status(200).json(commentsData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 // @desc    Fetch comments for a blog post
 // @route   GET /api/comments/:blogId
