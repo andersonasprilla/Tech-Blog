@@ -1,0 +1,24 @@
+{{#each blogs as |blog| }}
+<div class="row mb-4">
+  <div class="col-12">
+    <div class="card">
+      <!-- Card Header with Blog Title -->
+      <div class="card-header d-flex justify-content-between">
+    <div class="title">
+        <h2 class="mb-0">
+            <a href="/blog/{{blog.id}}" class="card-link">{{blog.title}}</a>
+        </h2>
+    </div>
+    <div class="posted-by">
+        <p class="card-text">Posted by {{blog.user.name}} on {{format_date blog.date_created}}</p>
+    </div>
+</div>
+
+      <!-- Card Body with Blog Content -->
+      <div class="card-body">
+        <p>{{blog.content}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{{/each}}
