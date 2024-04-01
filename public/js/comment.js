@@ -1,13 +1,13 @@
 const commentHandler = async (event) => {
     event.preventDefault(); // Prevent the default form submission behavior
 
-    const commentContent = document.querySelector('#userComment').value.trim();
+    const comment_description = document.querySelector('#userComment').value.trim();
 
-    if (commentContent) {
+    if (comment_description) {
         // Assuming we have an endpoint to handle POST request for comments
         const response = await fetch('/api/comments', {
             method: 'POST',
-            body: JSON.stringify({ commentContent }),
+            body: JSON.stringify({ comment_description }),
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -15,7 +15,7 @@ const commentHandler = async (event) => {
 
         if (response.ok) {
             const comment = await response.json(); // Assuming the server responds with the created comment
-            const commentCard = createCommentCard({content: commentContent}); // Create a new comment card
+            const commentCard = createCommentCard({content: comment_description}); // Create a new comment card
             document.querySelector('#commentsContainer').appendChild(commentCard); // Append the new comment to the comments container
             document.querySelector('#userComment').value = ''; // Clear the textarea after submitting
         } else {

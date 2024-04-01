@@ -31,29 +31,47 @@ router.get('/', async (req, res) => {
 
 // @desc    Fetch Blog by id
 // @route   GET http://localhost:3001/blog/:id
-// @access  Public
+// @access  Private (requires authentication)
 router.get('/blog/:id', withAuth, async (req, res) => {
   try {
+    // Fetch the blog by id from the database, including the user who created it and its comments
     const blogData = await Blog.findByPk(req.params.id, {
       include: [
         {
+          model: User,
+          attributes: ['name'], // Assuming 'name' is the attribute for the user's name
+        },
+        {
           model: Comment,
-          attributes: ['comment_description'],
+          attributes: ['comment_description', 'date_created'], // Assuming these are the relevant fields for comments
         },
       ],
     });
 
-    const blog = blogData.get({ plain: true });
-    
+    // If the blog doesn't exist, return a 404 error
+    if (!blogData) {
+      res.status(404).json({ message: 'No blog found with this id!' });
+      return;
+    }
 
+    // Serialize the data
+    const blog = blogData.get({ plain: true });
+
+
+    // Render the blog page with the fetched blog data
+    // Assuming the template is named 'blog', replace it with the actual template name if different
     res.render('blog', {
       ...blog,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in // Pass the logged_in status to the template
     });
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });
+
+
+
 
 //http://localhost:3001/dashboard
 // Use withAuth middleware to prevent access to route

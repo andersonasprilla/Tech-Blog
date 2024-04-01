@@ -20,6 +20,34 @@ router.get('/', async (req, res) => {
   }
 });
 
+// @desc    Fetch blog by Id
+// @route   GET /api/blogs/:id
+// @access  Public
+router.get('/:id', async (req, res) => {
+  try {
+    const blogData = await Blog.findByPk(req.params.id, {
+      attributes: ['id','title','blog_description'],
+      include: [ 
+        {
+          model: Comment,
+          attributes: ['comment_description', 'date_created']
+        }
+      ]
+    });
+
+    if (!blogData) {
+      res.status(404).json({ message: 'Blog not found with this id' });
+      return;
+    }
+
+    res.status(200).json(blogData);
+  } catch (err) {
+    console.error('Error fetching blog by ID:', err);
+    res.status(500).json({ message: 'An error occurred while fetching the blog. Please try again later.' });
+  }
+});
+
+
 // @desc    Create a  Blog
 // @route   GET /api/blogs/
 // @access  Public

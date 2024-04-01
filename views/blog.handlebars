@@ -17,9 +17,21 @@
   </div>
 </div>
 
+{{#each comments as |comment| }}
 <div id="commentsContainer">
-  <!-- Existing comments will be here -->
+  <div class="row">
+  <div class="col-12">
+    <div class="card">
+      <!-- Card Body with Blog Content -->
+      <div class="card-body">
+        <p class="card-text">{{comment_description}}</p>
+      </div>
+      <!-- Card Footer with Author and Date -->
+    </div>
+  </div>
 </div>
+</div>
+{{/each}}
 
 <div class="row">
   <div class="col-12">
