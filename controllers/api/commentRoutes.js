@@ -48,14 +48,15 @@ router.post('/', withAuth, async (req, res) => {
 
     const newComment = await Comment.create({
       comment_description: req.body.comment_description,
-      blog_id: req.body.blog_id,
+      // blog_id: req.body.blog_id,
       // Assuming a 'user_id' field exists in your session to identify the logged-in user
-      user_id: req.session.user_id,
+      // user_id: req.session.user_id,
     });
 
     res.status(201).json(newComment);
   } catch (err) {
-    res.status(400).json(err);
+    console.error(err); // Log the error for debugging purposes
+    res.status(500).json({ message: 'An error occurred while creating the comment.', error: err.message });
   }
 });
 

@@ -24,6 +24,7 @@
     <div class="card">
       <!-- Card Body with Blog Content -->
       <div class="card-body">
+        <p class="card-text">{{date_created}}</p>
         <p class="card-text">{{comment_description}}</p>
       </div>
       <!-- Card Footer with Author and Date -->
@@ -39,7 +40,7 @@
       <div class="card-header">
         Comment
       </div>
-      <form class="commentForm">
+      <form class="commentForm" >
         <div class="card-body">
           <label for="userComment" class="form-label">Your Comment</label> <!-- Accessibility improvement -->
           <textarea type="text" id="userComment" class="full-width-input" placeholder="Write your comment here..."></textarea>
