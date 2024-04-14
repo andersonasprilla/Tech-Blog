@@ -19,9 +19,6 @@ const commentHandler = async (event) => {
             alert('Failed to create comment')
         }
     }
-
-    
-
 };
 
 
